@@ -25,8 +25,9 @@ import (
 // AssertionSet performs checks and accumulates assertion errors
 
 type Assertions struct {
-	E AssertionSet
-	W AssertionSet
+	E AssertionSet // error
+	W AssertionSet // warnings
+	X AssertionSet // skipped
 }
 type AssertionSet []error
 
@@ -71,6 +72,9 @@ func (a *Assertions) String() string {
 	var err string
 	for _, e := range a.E {
 		err += fmt.Sprintf("\t\033[1;31mERROR\033[0m Assertion failed: %s\n", e.Error())
+	}
+	for _, x := range a.X {
+		err += fmt.Sprintf("\t\033[1;31mERROR (SKIPPED)\033[0m Assertion failed: %s\n", x.Error())
 	}
 	for _, w := range a.W {
 		err += fmt.Sprintf("\t\033[1;33mWARN \033[0m Assertion failed: %s\n", w.Error())
