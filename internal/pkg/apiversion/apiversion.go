@@ -20,5 +20,7 @@ package apiversion
 var (
 	ExtensionsV1Beta1 = []string{"extensions/v1beta1"}
 	NetworkingV1Beta1 = []string{"networking.k8s.io/v1beta1"}
-	All               = []string{ExtensionsV1Beta1[0], NetworkingV1Beta1[0]}
+	NetworkingV1      = []string{"networking.k8s.io/v1"}
+	Networking        = []string{NetworkingV1Beta1[0], NetworkingV1[0]}
+	All               = []string{ExtensionsV1Beta1[0], NetworkingV1Beta1[0], NetworkingV1[0]}
 )

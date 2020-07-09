@@ -60,7 +60,7 @@ var pathRulesExactCheck = &checks.Check{
 var pathRulesExactFooCheck = &checks.Check{
 	Name:        "path-rules-exact-foo",
 	Description: "Ingress with exact path rule is preferred to prefix match and should send traffic to the correct backend service (/foo matches /foo)",
-	APIVersions: apiversion.NetworkingV1Beta1,
+	APIVersions: apiversion.Networking,
 	RunRequest: &checks.Request{
 		IngressName: "path-rules",
 		Path:        "/foo",
@@ -82,7 +82,7 @@ var pathRulesExactFooCheck = &checks.Check{
 var pathRulesExactFooCaseSensitiveCheck = &checks.Check{
 	Name:        "path-rules-exact-foo-case-sensitive",
 	Description: "Ingress with exact path rule is preferred to prefix match and should send traffic to the correct backend service; case sensitive (/foo does not match /fOo)",
-	APIVersions: apiversion.NetworkingV1Beta1,
+	APIVersions: apiversion.Networking,
 	RunRequest: &checks.Request{
 		IngressName: "path-rules",
 		Path:        "/fOo",
@@ -104,7 +104,7 @@ var pathRulesExactFooCaseSensitiveCheck = &checks.Check{
 var pathRulesExactBarCheck = &checks.Check{
 	Name:        "path-rules-exact-bar",
 	Description: "Ingress with exact path rule should send traffic to the correct backend service (/bar/ matches /bar/)",
-	APIVersions: apiversion.NetworkingV1Beta1,
+	APIVersions: apiversion.Networking,
 	RunRequest: &checks.Request{
 		IngressName: "path-rules",
 		Path:        "/bar/",
@@ -126,7 +126,7 @@ var pathRulesExactBarCheck = &checks.Check{
 var pathRulesExactBarNoSlashCheck = &checks.Check{
 	Name:        "path-rules-exact-bar-no-slash",
 	Description: "Ingress with exact path rule should not match partial paths (/bar/ does not match /bar)",
-	APIVersions: apiversion.NetworkingV1Beta1,
+	APIVersions: apiversion.Networking,
 	RunRequest: &checks.Request{
 		IngressName: "path-rules",
 		Path:        "/bar",
@@ -148,7 +148,7 @@ var pathRulesExactBarNoSlashCheck = &checks.Check{
 var pathRulesExactBarAaaCheck = &checks.Check{
 	Name:        "path-rules-exact-bar-aaa",
 	Description: "Ingress with exact path rule should not match partial paths (/bar/ does not match /bar/aaa)",
-	APIVersions: apiversion.NetworkingV1Beta1,
+	APIVersions: apiversion.Networking,
 	RunRequest: &checks.Request{
 		IngressName: "path-rules",
 		Path:        "/bar/aaa",

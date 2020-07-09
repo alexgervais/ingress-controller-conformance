@@ -104,7 +104,7 @@ var hostRulesExactNoMatchCheck = &checks.Check{
 var hostRulesWildcardSingleLabelCheck = &checks.Check{
 	Name:        "host-rules-wildcard-single-label",
 	Description: "Ingress with wildcard host rule should match a single label (*.foo.com matches wildcard.foo.com)",
-	APIVersions: apiversion.NetworkingV1Beta1,
+	APIVersions: apiversion.Networking,
 	RunRequest: &checks.Request{
 		IngressName: "host-rules",
 		Path:        "",
@@ -126,7 +126,7 @@ var hostRulesWildcardSingleLabelCheck = &checks.Check{
 var hostRulesWildcardMultipleLabelsCheck = &checks.Check{
 	Name:        "host-rules-wildcard-multiple-labels",
 	Description: "Ingress with wildcard host rule should only match a single label & fallback to default-backend (*.foo.com does not match aaa.bbb.foo.com)",
-	APIVersions: apiversion.NetworkingV1Beta1,
+	APIVersions: apiversion.Networking,
 	RunRequest: &checks.Request{
 		IngressName: "host-rules",
 		Path:        "",
@@ -148,7 +148,7 @@ var hostRulesWildcardMultipleLabelsCheck = &checks.Check{
 var hostRulesWildcardNoLabelCheck = &checks.Check{
 	Name:        "host-rules-wildcard-no-label",
 	Description: "Ingress with wildcard host rule should match exactly one single label & fallback to default-backend (*.foo.com does not match foo.com)",
-	APIVersions: apiversion.NetworkingV1Beta1,
+	APIVersions: apiversion.Networking,
 	RunRequest: &checks.Request{
 		IngressName: "host-rules",
 		Path:        "",
